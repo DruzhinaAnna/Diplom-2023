@@ -4,17 +4,93 @@
 <head>
     <style>
     body {
-        background: white
+        background: #DCDCDC;
+	  width:100%;
+	  height:100%;
         text-align:center;
         font-family: "Times New Roman", Georgia, Serif;
-        }
-    h1{
-        background: white;
+         }
+
+    h1   {
         color: black;
         text-align:center;
-         font-family: "Times New Roman", Georgia, Serif;}
+        font-family: "Times New Roman", Georgia, Serif;
+	    position: absolute;
+	    left:130px;
+	    top: 100px;
+	   }
 
-  </style>
+   form  {
+	background: white;
+ 	text-align:center;
+	width:25%;
+	height:65%;
+	border:2px;
+	border-radius: px;
+	position: absolute;
+    	left: 700px;
+    	top: 150px;
+	   }
+
+   button{
+	background: #4169E1;
+	border:0;
+	color:white;
+	border-radius: 10px;
+ 	font-size:17px;
+ 	position: absolute;
+      left: 200px;
+      top: 350px;
+	width: 23vw;
+	margin-left: calc(50% - 22.1vw);
+	height: 40px;
+	}
+
+   p1   {
+    position: absolute;
+    left: 180px;
+    top: 570px;
+      }
+
+   p  {
+    font-family: "Times New Roman", Georgia, Serif;
+    color: grey;
+    position: absolute;
+    left: 100px;
+    top: 450px;
+      }
+
+   div{
+    position: absolute;
+    left: 70px;
+    top: 200px;
+    }
+
+  label {
+   color: grey;
+   font-weight: bold;
+    position: absolute;
+    left: -45px;
+    top: -10px;
+	}
+
+label1{color: grey;
+   font-weight: bold;
+    position: absolute;
+    left: -45px;
+    top: 65px;
+}
+
+	img{
+position: absolute;
+    left: 165px;
+    top: 20px;
+}
+
+.d-none{display:none;}
+
+
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -24,28 +100,77 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}"/>
 </head>
 
-  <body class="text-center">
-
-  <form>
-    <img src="{% static 'images/favicon.ico' %}" alt="" width="72" height="57" >
+<body class="text-center" >
+ <form >
+    <img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60">
     <h1>Войти в Picaso</h1>
+    <div id="Login" >
+        <label for="floatingInput">Адрес электронной почты</label> <br>
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+               style="width: 22.5vw;
+margin-left: calc(50% - 9.35vw);
+height: 30px;
+border-radius: 3px;
+color: black;">
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Адрес электронной почты</label>
     </div>
-    <button  type="submit">Продолжить</button>
-      <p> Нет учетной записи?
-          <a  href="about.html"> Зарегестрироваться </a>
-      </p>
+     <div id="Password" class="d-none">
+        <label1 for="floatingInput1"> Пароль </label1> <br>
+        <input type="password" class="form-control" id="floatingInput1"
+               style="width: 22.5vw;
+margin-left: calc(50% - 2.55vw);
+height: 30px;
+border-radius: 3px;
+position:absolute;
+top:90px;
+color: black;">
 
-    <p>&copy; 2017–2023</p>
-  </form>
+    </div>
+
+    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
+
+      <script>
+        function alerted(){
+       document.getElementById("Password").classList.remove("d-none");
+        }
+
+    </script>
+      <script>
+       function FormValidation(){
+
+    var fn=document.getElementById('floatingInput').value;
+    if(fn == ""){
+        alert('Пожалуйста,введите email');
+        document.getElementById('floatingInput').style.borderColor = "red";
+        return false;
+    }else{
+        document.getElementById('floatingInput').style.borderColor = "green";
+
+    }
+     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var address = document.getElementById('floatingInput').value;
+   if(reg.test(address) == false) {
+      alert('Введите корректный e-mail');
+       document.getElementById('floatingInput').style.borderColor = "red";
+      return false;
+   }
+   else{
+document.getElementById("Password").classList.remove("d-none");
+    }
+     }
+    </script>
+
+
+
+
+
+    <p> Нет учетной записи?
+        <a href="/about"> Зарегестрироваться </a>
+    </p>
+    <p1>&copy; 2017–2023</p1>
+</form>
 </main>
-
-
-
-  </body>
+</body>
 </html>
 
 
