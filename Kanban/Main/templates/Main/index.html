@@ -3,92 +3,81 @@
 <html lang="ru">
 <head>
     <style>
-    body {
-        background: #DCDCDC;
-	  width:100%;
-	  height:100%;
-        text-align:center;
-        font-family: "Times New Roman", Georgia, Serif;
-         }
+     body {
+            display: flex;
+            background: #DCDCDC;
+            font-family: Roboto;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
 
-    h1   {
-        color: black;
-        text-align:center;
-        font-family: "Times New Roman", Georgia, Serif;
-	    position: absolute;
-	    left:130px;
-	    top: 100px;
-	   }
+       form {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            text-align:center;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            padding: 6% 3%;
+        }
 
-   form  {
-	background: white;
- 	text-align:center;
-	width:25%;
-	height:65%;
-	border:2px;
-	border-radius: px;
-	position: absolute;
-    	left: 700px;
-    	top: 150px;
-	   }
+        h1 {
+            color: black;
+            text-align:center;
+            margin:-10% 0 20% 0;
+           }
 
-   button{
-	background: #4169E1;
-	border:0;
-	color:white;
-	border-radius: 10px;
- 	font-size:17px;
- 	position: absolute;
-      left: 200px;
-      top: 350px;
-	width: 23vw;
-	margin-left: calc(50% - 22.1vw);
-	height: 40px;
-	}
+        button {
+            background: #4169E1;
+            color:white;
+            border-radius: 10px;
+            font-size:17px;
+            height: 40px;
+            width: 300px;
+            margin: 13% 0 0 0;
 
-   p1   {
-    position: absolute;
-    left: 180px;
-    top: 570px;
-      }
+        }
 
-   p  {
-    font-family: "Times New Roman", Georgia, Serif;
-    color: grey;
-    position: absolute;
-    left: 100px;
-    top: 450px;
-      }
 
-   div{
-    position: absolute;
-    left: 70px;
-    top: 200px;
-    }
 
-  label {
-   color: grey;
-   font-weight: bold;
-    position: absolute;
-    left: -45px;
-    top: -10px;
-	}
+        p1 {
+	   margin: 7% 0 -10% 0;
+        }
 
-label1{color: grey;
-   font-weight: bold;
-    position: absolute;
-    left: -45px;
-    top: 65px;
-}
+        p {
+            color: grey;
+            margin: 14% 0 14% 0;
+        }
 
-	img{
-position: absolute;
-    left: 165px;
-    top: 20px;
-}
+        #Login{
+	   display: flex;
+  	   flex-direction: column;
+	   width: 100%;
+	   text-align:left;
 
-.d-none{display:none;}
+        }
 
+
+
+        label {
+            color: grey;
+            font-weight: bold;
+        }
+
+        label1 {
+            color: grey;
+            font-weight: bold;
+        }
+
+        img{
+        margin:-20% 0 20% 0;
+        }
+
+        .d-none{display:none;}
 
     </style>
     <meta charset="UTF-8">
@@ -106,24 +95,12 @@ position: absolute;
     <h1>Войти в Picaso</h1>
     <div id="Login" >
         <label for="floatingInput">Адрес электронной почты</label> <br>
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-               style="width: 22.5vw;
-margin-left: calc(50% - 9.35vw);
-height: 30px;
-border-radius: 3px;
-color: black;">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
 
     </div>
      <div id="Password" class="d-none">
         <label1 for="floatingInput1"> Пароль </label1> <br>
-        <input type="password" class="form-control" id="floatingInput1"
-               style="width: 22.5vw;
-margin-left: calc(50% - 2.55vw);
-height: 30px;
-border-radius: 3px;
-position:absolute;
-top:90px;
-color: black;">
+        <input type="password" class="form-control" id="floatingInput1">
 
     </div>
 

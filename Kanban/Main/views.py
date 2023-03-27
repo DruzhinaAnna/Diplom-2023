@@ -9,3 +9,6 @@ def index(request):
 def about(request):
     return render(request, 'Main/about.html')
 
+
+def register(request):
+    return render(request, 'Main/register.html')
