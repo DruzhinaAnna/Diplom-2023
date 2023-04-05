@@ -1,0 +1,111 @@
+<!doctype html>
+{%load static%}
+<html lang="ru">
+<head>
+    <style>
+        body {
+            background: white;
+            font-family: Roboto;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            color: black;
+            text-align:center;
+            font-size: 50px;
+            margin:0 0 0 0;
+           }
+        button {
+            background: #4169E1;
+            color:white;
+
+            font-size:17px;
+            height: 50px;
+            width: 560px;
+            margin: 3% 20% -5% 36%;
+        }
+        #Icons {
+        display:flex;
+        flex-direction:row;
+        margin: 9% 0 0 0;
+        }
+        #first {
+        margin: 0 0 0 25%;
+        width: 300px;
+        height: 180px;
+
+        }
+        #second{
+        margin: 0 0 0 15%;
+        width: 300px;
+        height: 180px;
+        }
+        .elem {
+        display:flex;
+        }
+
+        img{
+        margin: 0 0 5% 25%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="C:\Users\child\PycharmProjects\App\favicon.png" type="image/png">
+    <title> Создайте учетную запись - Picaso </title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}"/>
+</head>
+
+<body class="text-center">
+
+<img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60" >
+<h1>Регистрация</h1>
+
+<div id="Login">
+
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+           style="margin: 5% 0 0 36%; font-size:18px;width: 550px;height: 40px;">
+<button type="button" class="btn btn-success" id="submit" onclick=" FormValidation()" > Зарегестрироваться</button>
+
+
+</div>
+<div id="Icons">
+    <div id="first">
+    <img src="{% static 'images/предложения.png' %}" alt="" width="30" height="30">
+    <p style="color: grey; font-size:17px;text-align:center;"> Получите доступ к неограниченным задачам и хранилищу </p>
+</div>
+<div id="second">
+<img src="{% static 'images/предложения.png' %}" alt="" width="30" height="30" style="margin: 0 0 0 -11.5%;" >
+<p style="color: grey; font-size:17px;text-align:center;"> Смотрите различные представления, такие как  доска и календарь </p>
+</div>
+</div>
+<script>
+       function FormValidation(){
+
+    var fn=document.getElementById('floatingInput').value;
+    if(fn == ""){
+        alert('Пожалуйста,введите email');
+        document.getElementById('floatingInput').style.borderColor = "red";
+        return false;
+    }else{
+        document.getElementById('floatingInput').style.borderColor = "green";
+
+    }
+     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var address = document.getElementById('floatingInput').value;
+   if(reg.test(address) == false) {
+      alert('Введите корректный e-mail');
+       document.getElementById('floatingInput').style.borderColor = "red";
+      return false;
+   }
+   else{
+   alert('Электронный адрес зарегестрирован');
+location.href="/register";
+    }
+     }
+    </script>
+</body>
+</html>

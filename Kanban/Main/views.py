@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from .models import User
 
-def index(request):
+def authorization(request):
+    return render(request, 'Main/authorization.html')
 
-    return render(request, 'Main/index.html')
 
-
-def about(request):
-    return render(request, 'Main/about.html')
+def registration(request):
+    return render(request, 'Main/registration.html')
 
 
 def register(request):

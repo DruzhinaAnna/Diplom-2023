@@ -79,6 +79,7 @@
 
         .d-none{display:none;}
 
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -89,30 +90,32 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}"/>
 </head>
 
-<body class="text-center" >
- <form >
+<body class="text-center">
+<form>
     <img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60">
     <h1>Войти в Picaso</h1>
-    <div id="Login" >
+    <div id="Login">
         <label for="floatingInput">Адрес электронной почты</label> <br>
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
 
     </div>
-     <div id="Password" class="d-none">
-        <label1 for="floatingInput1"> Пароль </label1> <br>
+    <div id="Password" class="d-none">
+        <label1 for="floatingInput1"> Пароль</label1>
+        <br>
         <input type="password" class="form-control" id="floatingInput1">
 
     </div>
 
     <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
 
-      <script>
+    <script>
         function alerted(){
        document.getElementById("Password").classList.remove("d-none");
         }
 
+
     </script>
-      <script>
+    <script>
        function FormValidation(){
 
     var fn=document.getElementById('floatingInput').value;
@@ -135,16 +138,14 @@
 document.getElementById("Password").classList.remove("d-none");
     }
      }
+
     </script>
 
 
-
-
-
     <p> Нет учетной записи?
-        <a href="/about"> Зарегестрироваться </a>
+        <a href="/registration"> Зарегестрироваться </a>
     </p>
-    <p1>&copy; 2017–2023</p1>
+    <p1>&copy; 2023</p1>
 </form>
 </main>
 </body>
