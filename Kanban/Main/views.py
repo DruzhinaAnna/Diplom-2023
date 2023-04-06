@@ -11,3 +11,7 @@ def registration(request):
 
 def register(request):
     return render(request, 'Main/register.html')
+
+
+def main(request):
+    return render(request, 'Main/main.html')

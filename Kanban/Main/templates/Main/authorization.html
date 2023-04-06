@@ -31,7 +31,7 @@
             margin:-10% 0 20% 0;
            }
 
-        button {
+        #submit {
             background: #4169E1;
             color:white;
             border-radius: 10px;
@@ -41,7 +41,15 @@
             margin: 13% 0 0 0;
 
         }
-
+            #submit1 {
+            background: #4169E1;
+            color:white;
+            border-radius: 10px;
+            font-size:17px;
+            height: 40px;
+            width: 300px;
+            margin: 12% 0 0 0;
+        }
 
 
         p1 {
@@ -97,16 +105,16 @@
     <div id="Login">
         <label for="floatingInput">Адрес электронной почты</label> <br>
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-
+    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
     </div>
     <div id="Password" class="d-none">
         <label1 for="floatingInput1"> Пароль</label1>
         <br>
         <input type="password" class="form-control" id="floatingInput1">
-
+        <button type="button" class="btn btn-success" id="submit1" onclick="  ">Войти</button>
     </div>
 
-    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
+
 
     <script>
         function alerted(){
@@ -136,6 +144,7 @@
    }
    else{
 document.getElementById("Password").classList.remove("d-none");
+document.getElementById("Login").style.display = "none";
     }
      }
 

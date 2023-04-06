@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+{%load static%}
+<html lang="ru">
 <head>
+    <style>
+
+     body {
+            display: flex;
+            background: #DCDCDC;
+            font-family: Roboto;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+       form {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            text-align:center;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            padding: 16% 9%;
+        }
+        label {
+            color: grey;
+            font-weight: bold;
+        }
+
+        label1 {
+            color: grey;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+        </style>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="C:\Users\child\PycharmProjects\App\favicon.png" type="image/png">
+    <title> Настройте свою учетную запись - Picaso </title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}"/>
 </head>
-<body>
-<h1>Чума во время...</h1>>
+<body class="text-center">
+<form>
+    <img src="{% static 'images/Logo.png' %}" alt="" width="120" height="40">
+    <h1>Добро пожаловать в Picaso! </h1>
+    <div id="registration">
+        <div id="FIO">
+        <label1 for="floatingInput"> Ваше имя и фамилия </label1>
+        <br>
+        <input type="fio" class="form-control" id="floatingInput">
+
+         </div>
+        <div id="Password">
+        <label1 for="floatingInput1"> Пароль </label1>
+        <br>
+        <input type="password" class="form-control" id="floatingInput1">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </div>
+    </div>
+</form>
 </body>
 </html>
