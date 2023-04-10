@@ -12,12 +12,14 @@
             align-items: center;
             justify-content: center;
         }
+
         h1 {
             color: black;
             text-align:center;
             font-size: 50px;
             margin:0 0 0 0;
            }
+
         button {
             background: #4169E1;
             color:white;
@@ -25,27 +27,35 @@
             font-size:17px;
             height: 50px;
             width: 560px;
-            margin: 3% 20% -5% 36%;
+            margin: 3.5% 20% -5% 21%;
         }
+
+        #Main{
+            align-items: center;
+            justify-content: center;
+            text-align:center;
+        }
+
         #Icons {
         display:flex;
         flex-direction:row;
-        justify-content: center;
-        margin-top:20px;
+        justify-content: space-between;
+        margin-top:120px;
         }
+
         .elem {
         display:flex;
         flex-direction:row;
-  align-items: center;
-  margin-right:10px;
-  width:10%;
-  text-justify: auto;
-}
+        align-items: center;
+        margin-right:10px;
+        width:10%;
+        text-justify: auto;
+        color: grey;
+        font-size:17px;
         }
 
-        img{
-        margin: 0 0 5% 25%;
-        }
+
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,27 +66,28 @@
 </head>
 
 <body class="text-center">
-
-<img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60" >
+<div id="Main">
+<img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60" style="margin: 2% 0 5% -35%;" >
 <h1>Регистрация</h1>
 
-<div id="Login">
+    <div id="Login">
 
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-           style="margin: 5% 0 0 36%; font-size:18px;width: 550px;height: 40px;">
-<button type="button" class="btn btn-success" id="submit" onclick=" FormValidation()" > Зарегестрироваться</button>
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+               style="margin: 5% 0 0 1%; font-size:18px;width: 550px;height: 40px;">
+    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation()" > Зарегестрироваться</button>
 
 
-</div>
-<div id="Icons">
-    <div class="elem">
-    <img src="{% static 'images/предложения.png' %}" alt="" width="30" height="30">
-    <p style="color: grey; font-size:17px;text-align:center;"> Получите доступ к неограниченным задачам и хранилищу </p>
-</div>
-<div class="elem">
-<img src="{% static 'images/предложения.png' %}" alt="" width="30" height="30 >
-<p style="color: grey; font-size:17px;"> Смотрите различные представления, такие как  доска и календарь </p>
-</div>
+    </div>
+    <div id="Icons">
+        <div class="elem" style="margin: 0 0 0 36%;">
+            <img src="{% static 'images/предложения.png' %}"  alt="" width="30" height="30">
+            <p style="color: grey; font-size:17px;text-align:center;"> Получите доступ к неограниченным задачам и хранилищу </p>
+        </div>
+        <div class="elem" style="margin: 0 35% 0 0;">
+            <img src="{% static 'images/предложения.png' %}"    alt="" width="30" height="30">
+            <p style="color: grey; font-size:17px;text-align:center;"> Смотрите различные представления, такие как  доска и календарь </p>
+        </div>
+    </div>
 </div>
 <script>
        function FormValidation(){
@@ -103,5 +114,6 @@ location.href="/register";
     }
      }
     </script>
+
 </body>
 </html>

@@ -48,7 +48,7 @@
             font-size:17px;
             height: 40px;
             width: 300px;
-            margin: 12% 0 0 14%;
+            margin: 12% 0 0 1%;
         }
 
 
@@ -61,7 +61,7 @@
             margin: 14% 0 14% 0;
         }
 
-        #Login{
+        .Login_test{
 	   display: flex;
   	   flex-direction: column;
 	   width: 100%;
@@ -86,8 +86,8 @@
 
         .d-none{display:none;
         flex-direction: column;
-	   width: 100%;
-	   text-align:left;}
+
+	  }
 
 
     </style>
@@ -104,12 +104,13 @@
 <form>
     <img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60">
     <h1>Войти в Picaso</h1>
-    <div id="Login">
+    <div id="Login" class="Login_test">
         <label for="floatingInput">Адрес электронной почты</label> <br>
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
     <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
     </div>
-    <div id="Password" class="d-none">
+
+    <div id="Password" class="Login_test d-none">
         <label1 for="floatingInput1"> Пароль</label1>
         <br>
         <input type="password" class="form-control" id="floatingInput1">
@@ -118,13 +119,7 @@
 
 
 
-    <script>
-        function alerted(){
-       document.getElementById("Password").classList.remove("d-none");
-        }
 
-
-    </script>
     <script>
        function FormValidation(){
 
