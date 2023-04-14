@@ -23,7 +23,7 @@
             border-radius: 10px;
             align-items: center;
             justify-content: center;
-            padding: 16% 9%;
+            padding: 7% 3%;
         }
         label {
             color: grey;
@@ -34,12 +34,16 @@
             color: grey;
             font-weight: bold;
         }
+        #submit {
+            background: #4169E1;
+            color:white;
+            border-radius: 10px;
+            font-size:17px;
+            height: 40px;
+            width: 300px;
+            margin: 13% 0 0 0;
 
-
-
-
-
-
+        }
 
         </style>
     <meta charset="UTF-8">
@@ -54,26 +58,26 @@
     <img src="{% static 'images/Logo.png' %}" alt="" width="120" height="40">
     <h1>Добро пожаловать в Picaso! </h1>
     <div id="registration">
-        <div id="FIO">
-        <label1 for="floatingInput"> Ваше имя и фамилия </label1>
+        <div id="FIO" style="text-align:left;margin: 5% auto auto -16%; display: flex; flex-direction: column;width: 133%;">
+        <label1 for="floatingInput" > Ваше имя и фамилию </label1>
         <br>
-        <input type="fio" class="form-control" id="floatingInput">
+        <input type="fio" class="form-control" id="floatingInput"  placeholder="Иван Иванов">
 
          </div>
-        <div id="Password">
+        <div id="Password" style="text-align:left;margin: 5% auto auto -16%; display: flex; flex-direction: column;width: 133%;">
         <label1 for="floatingInput1"> Пароль </label1>
         <br>
         <input type="password" class="form-control" id="floatingInput1">
 
         </div>
-        <div id="Repeat">
+        <div id="Repeat" style="text-align:left;margin: 5% auto auto -16%; display: flex; flex-direction: column;width: 133%;">
         <label1 for="floatingInput2"> Подтверждение пароля </label1>
         <br>
         <input type="password" class="form-control" id="floatingInput2">
-         <button class="w-100 btn btn-lg btn-primary" type="submit"> Продолжить </button>
         </div>
+        <button class="w-100 btn btn-lg btn-primary" id="submit" > Продолжить </button>
     </div>
-    <p> Не та учетная записи?
+    <p style="margin: 14% 0 5% 0;"> Не та учетная записи?
         <a href="/"> Выполните вход</a>
         со своей
     </p>

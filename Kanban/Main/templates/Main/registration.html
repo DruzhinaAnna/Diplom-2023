@@ -74,6 +74,7 @@
 
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
                style="margin: 5% 0 0 1%; font-size:18px;width: 550px;height: 40px;">
+        <div id="name" style="margin: 2% auto 0 auto; color:red;font-size:17px;"></div>
     <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation()" > Зарегестрироваться</button>
 
 
@@ -94,7 +95,7 @@
 
     var fn=document.getElementById('floatingInput').value;
     if(fn == ""){
-        alert('Пожалуйста,введите email');
+        document.getElementById('name').textContent = 'Пожалуйста,введите email';
         document.getElementById('floatingInput').style.borderColor = "red";
         return false;
     }else{
@@ -104,13 +105,14 @@
      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
    var address = document.getElementById('floatingInput').value;
    if(reg.test(address) == false) {
-      alert('Введите корректный e-mail');
+      document.getElementById('name').textContent = 'Введите корректный e-mail';
        document.getElementById('floatingInput').style.borderColor = "red";
       return false;
    }
    else{
-   alert('Электронный адрес зарегестрирован');
-location.href="/register";
+   document.getElementById('floatingInput').style.borderColor = "green";
+   alert('Электронный адрес успешно зарегестрирован');
+    location.href="/register";
     }
      }
     </script>

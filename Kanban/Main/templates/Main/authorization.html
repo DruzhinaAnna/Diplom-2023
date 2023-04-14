@@ -69,7 +69,6 @@
         }
 
 
-
         label {
             color: grey;
             font-weight: bold;
@@ -107,6 +106,7 @@
     <div id="Login" class="Login_test">
         <label for="floatingInput">Адрес электронной почты</label> <br>
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <div id="name" style="margin: 5% auto 0 auto; color:red;"></div>
     <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
     </div>
 
@@ -114,6 +114,7 @@
         <label1 for="floatingInput1"> Пароль</label1>
         <br>
         <input type="password" class="form-control" id="floatingInput1">
+        <div id="name1"></div>
         <button type="button" class="btn btn-success" id="submit1" onclick="  ">Войти</button>
     </div>
 
@@ -125,7 +126,7 @@
 
     var fn=document.getElementById('floatingInput').value;
     if(fn == ""){
-        alert('Пожалуйста,введите email');
+    document.getElementById('name').textContent = 'Пожалуйста,введите email';
         document.getElementById('floatingInput').style.borderColor = "red";
         return false;
     }else{
@@ -135,7 +136,8 @@
      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
    var address = document.getElementById('floatingInput').value;
    if(reg.test(address) == false) {
-      alert('Введите корректный e-mail');
+   document.getElementById('name').textContent = 'Введите корректный e-mail';
+
        document.getElementById('floatingInput').style.borderColor = "red";
       return false;
    }
