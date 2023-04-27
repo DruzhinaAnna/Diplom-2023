@@ -100,61 +100,67 @@
 </head>
 
 <body class="text-center">
-<form>
-    <img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60">
-    <h1>Войти в Picaso</h1>
-    <div id="Login" class="Login_test">
-        <label for="floatingInput">Адрес электронной почты</label> <br>
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <div id="name" style="margin: 5% auto 0 auto; color:red;"></div>
-    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>
-    </div>
+<div>
+    <form action="{% url 'users:login' %}" method="post">
+        {% csfr_token %}
+        {{ form.as_p }}
+    </form>
+</div>
+<!--<form>-->
+<!--    <img src="{% static 'images/Logo.png' %}" alt="" width="150" height="60">-->
+<!--    <h1>Войти в Picaso</h1>-->
+<!--    <div id="Login" class="Login_test">-->
+<!--        <label for="floatingInput">Адрес электронной почты</label> <br>-->
+<!--        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">-->
+<!--        <div id="name" style="margin: 5% auto 0 auto; color:red;"></div>-->
+<!--    <button type="button" class="btn btn-success" id="submit" onclick=" FormValidation(); ">Продолжить</button>-->
+<!--    </div>-->
 
-    <div id="Password" class="Login_test d-none">
-        <label1 for="floatingInput1"> Пароль</label1>
-        <br>
-        <input type="password" class="form-control" id="floatingInput1">
-        <div id="name1"></div>
-        <button type="button" class="btn btn-success" id="submit1" onclick="  ">Войти</button>
-    </div>
-
-
-
-
-    <script>
-       function FormValidation(){
-
-    var fn=document.getElementById('floatingInput').value;
-    if(fn == ""){
-    document.getElementById('name').textContent = 'Пожалуйста,введите email';
-        document.getElementById('floatingInput').style.borderColor = "red";
-        return false;
-    }else{
-        document.getElementById('floatingInput').style.borderColor = "green";
-
-    }
-     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-   var address = document.getElementById('floatingInput').value;
-   if(reg.test(address) == false) {
-   document.getElementById('name').textContent = 'Введите корректный e-mail';
-
-       document.getElementById('floatingInput').style.borderColor = "red";
-      return false;
-   }
-   else{
-document.getElementById("Password").classList.remove("d-none");
-document.getElementById("Login").style.display = "none";
-    }
-     }
-
-    </script>
+<!--    <div id="Password" class="Login_test d-none">-->
+<!--        <label1 for="floatingInput1"> Пароль</label1>-->
+<!--        <br>-->
+<!--        <input type="password" class="form-control" id="floatingInput1">-->
+<!--        <div id="name1"></div>-->
+<!--        <button type="button" class="btn btn-success" id="submit1" onclick="  ">Войти</button>-->
+<!--    </div>-->
 
 
-    <p> Нет учетной записи?
-        <a href="/registration"> Зарегестрироваться </a>
-    </p>
-    <p1>&copy; 2023</p1>
-</form>
+
+
+<!--    <script>-->
+<!--       function FormValidation(){-->
+
+<!--    var fn=document.getElementById('floatingInput').value;-->
+<!--    if(fn == ""){-->
+<!--    document.getElementById('name').textContent = 'Пожалуйста,введите email';-->
+<!--        document.getElementById('floatingInput').style.borderColor = "red";-->
+<!--        return false;-->
+<!--    }else{-->
+<!--        document.getElementById('floatingInput').style.borderColor = "green";-->
+
+<!--    }-->
+<!--     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;-->
+<!--   var address = document.getElementById('floatingInput').value;-->
+<!--   if(reg.test(address) == false) {-->
+<!--   document.getElementById('name').textContent = 'Введите корректный e-mail';-->
+
+<!--       document.getElementById('floatingInput').style.borderColor = "red";-->
+<!--      return false;-->
+<!--   }-->
+<!--   else{-->
+<!--document.getElementById("Password").classList.remove("d-none");-->
+<!--document.getElementById("Login").style.display = "none";-->
+<!--    }-->
+<!--     }-->
+
+<!--    </script>-->
+
+
+<!--    <p> Нет учетной записи?-->
+<!--        <a href="/registration"> Зарегестрироваться </a>-->
+<!--    </p>-->
+<!--    <p1>&copy; 2023</p1>-->
+<!--</form>-->
 </main>
 </body>
 </html>
