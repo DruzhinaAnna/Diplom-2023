@@ -18,7 +18,7 @@ def authorization(request):
     else:
         form = UserLoginForm()
     context = {'form': form}
-    return render(request, 'Main/authorization.html', context)
+    return render(request, 'Users/authorization.html', context)
 
 
 def registration(request):
